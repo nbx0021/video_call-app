@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css files/video_callStyle.css') }}">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+<script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Video Call App</h1>
+    </header>
+    <main>
+        <div class="video-container">
+            <div class="video-box">
+                <video id="local-video" autoplay muted></video> 
+                <p>Your Email: {{ userEmail }}</p>
+                <p>Your Room ID: {{ roomID }}</p>
+            </div>
+            <div class="video-box">
+                <video id="remote-video" autoplay></video>
+                <p>Other User's Email: {{ otherUserEmail }}</p>
+                <p>Other User's Room ID: {{ otherRoomID }}</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-call" class="icon-button">
+                <i class="fas fa-video"></i>  Start Video
+            </button>
+            <button id="mute-audio" class="icon-button">
+                <i class="fas fa-microphone"></i>  Mute Audio
+            </button>
+            <button id="end-call" class="icon-button">
+                <i class="fas fa-phone-slash"></i>  End Call
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Video Call App</p>
+    </footer>
+    <script src="/static/js_files/webrtc.js"></script>
+    <script src="/static/js_files/video.js"></script>
+    <script src="/static/js_files/server.js"></script>
+</body>
+</html>

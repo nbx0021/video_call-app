@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css files/index_Style.css">
+    <title>Video Call App</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+
+<body>
+    <h1>Welcome to Video Call App</h1>
+    <section class="first">
+        <form>
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="room_no">
+                <label for="room">Room ID:</label>
+                <input type="text" id="room" name="room" required>
+            </div>
+            <button type="button" id="get-started">Join</button>
+        </form>
+    </section>
+    <script src="/static/js_files/index.js"></script>
+</body>
+</html>
